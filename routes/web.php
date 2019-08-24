@@ -15,3 +15,4 @@ Route::get('/', 'HomeController@index');
 Route::post('post', 'HomeController@store');
 Route::get('/company', 'HomeController@company')->name('company');
 Route::post('/company', 'HomeController@addcompany')->name('add.company');
+// Route::post('/company', 'HomeController@addcompany')->name('add.company');
