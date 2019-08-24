@@ -22,7 +22,7 @@
       @foreach ($errors->all() as $item)
       {{ $item }}<br>
       @endforeach 
-       
+       rafsan
 <button type="submit" class="btn btn-primary">Add company</button>
 @csrf
 </form>
