@@ -36,7 +36,8 @@ class HomeController extends Controller
     }
     function company()
     {
-      return view('pages.company');
+      $data['company'] = Company::get();
+      return view('pages.company' , $data);
     }
     function addcompany(Request $request)
     {

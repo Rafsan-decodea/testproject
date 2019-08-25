@@ -16,7 +16,7 @@
      Phone:  <input type="number" name="phone" />
        </div>
        
-      </div>
+      
  
 
       @foreach ($errors->all() as $item)
@@ -27,7 +27,10 @@
 @csrf
 </form>
 
-
+@foreach ($company as $item)
+ {{ $item->name}}
+ {{ $item->phone }}    
+@endforeach
 
 
 
