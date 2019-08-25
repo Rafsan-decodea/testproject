@@ -16,17 +16,22 @@
      Phone:  <input type="number" name="phone" />
        </div>
        
-      </div>
+      
  
 
       @foreach ($errors->all() as $item)
       {{ $item }}<br>
       @endforeach 
-       rafsan
+    
 <button type="submit" class="btn btn-primary">Add company</button>
 @csrf
 </form>
 
+
+@foreach ($company_data as $item)
+    {{ $item->name }}
+    {{ $item->phone }}
+@endforeach
 
 
 

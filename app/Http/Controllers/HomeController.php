@@ -36,8 +36,10 @@ class HomeController extends Controller
     }
     function company()
     {
-      return view('pages.company');
+      $data['company_data'] = Company::all();
+      return view('pages.company',$data);
     }
+
     function addcompany(Request $request)
     {
       $request->validate([
@@ -45,11 +47,11 @@ class HomeController extends Controller
         'phone' => 'required'
       ]);
       
-      $company = new Company();
-      $company->name = $request->name;
-      $company->phone = $request->phone;
-      $company->save();
-      return redirect()->back();
+            $company = new Company();
+            $company->name = $request->name;
+            $company->phone = $request->phone;
+            $company->save();
+            return redirect()->back();
+        
     }
-    
 }
