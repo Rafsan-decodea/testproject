@@ -11,6 +11,7 @@ class HomeController extends Controller
     function index(){
        $data['activecustomers'] = model1::active()->get();
        $data['inactivecustomres'] = model1::inactive()->get();
+       $data['company'] = Company::all();
       //  dd($activeCustomers);
         $data['name'] = model1::all();
           return view('pages.welcome',$data);
@@ -24,6 +25,8 @@ class HomeController extends Controller
         'class'=>'required',
         'active'=>'required',
         'email'=>'required|email',
+        'company_id'=>'required',
+       
       ]);
       $obj = new model1();
       $obj->Name = request('name');
@@ -45,6 +48,7 @@ class HomeController extends Controller
       $request->validate([
         'name' => 'required|min:3|max:10',
         'phone' => 'required'
+       
       ]);
       
             $company = new Company();

@@ -30,6 +30,14 @@
 
         </select>
       </div>
+      <div class="form-group">
+        <label for="active">status</label>
+        <select name="active" id="active" class="form-control" >
+          @foreach ($company as $item)
+              <option value="{{ $item->id }}">{{  $item->name }}</option>
+          @endforeach
+        </select>
+      </div>
  
 
       @foreach ($errors->all() as $item)
@@ -46,6 +54,7 @@
 @foreach($activecustomers as $item)
     id==> {{ $item->id }} <br> 
      Name==> {{ $item->Name }}({{ $item->email }})  <br>
+     Name==> {{ $item->company->name }}({{ $item->email }})  <br>
    roll==> {{ $item->Roll }} <br>
     Clas==>{{ $item->Class }}<br>
     Email==>{{ $item->email }}<br>
@@ -56,10 +65,11 @@
 
 <div class="row">
     <div class="col-6">
-      <h3>active customer</h3>
+      <h3>inactive customer</h3>
  @foreach($inactivecustomres as $item)
      id==> {{ $item->id }} <br> 
       Name==> {{ $item->Name }}({{ $item->email }})  <br>
+      Name==> {{ $item->company->name }}({{ $item->email }})  <br>
     roll==> {{ $item->Roll }} <br>
      Clas==>{{ $item->Class }}<br>
      Email==>{{ $item->email }}<br>

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 Route::post('post', 'HomeController@store');
 Route::get('/company', 'HomeController@company')->name('company');
 Route::post('/company', 'HomeController@addcompany')->name('add.company');

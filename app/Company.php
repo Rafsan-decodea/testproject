@@ -8,6 +8,6 @@ class Company extends Model
 {
     public function customer()
     {
-        return $this->hasmany(model1::class);
+        return $this->hasMany(model1::class);
     }
 }
