@@ -15,6 +15,7 @@ class CreateModel1sTable extends Migration
     {
         Schema::create('model1s', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('company_id');
             $table->string('Name');
             $table->string('Roll');
             $table->string('Class');

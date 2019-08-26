@@ -21,7 +21,7 @@
 
       @foreach ($errors->all() as $item)
       {{ $item }}<br>
-      @endforeach 
+      @endforeach
     
 <button type="submit" class="btn btn-primary">Add company</button>
 @csrf

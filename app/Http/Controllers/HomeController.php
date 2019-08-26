@@ -17,7 +17,7 @@ class HomeController extends Controller
           return view('pages.welcome',$data);
          
     }
-    function store(){
+    function store(Request $request){
 
       $data = request()->validate([
         'name'=>'required|min:3',
@@ -25,7 +25,7 @@ class HomeController extends Controller
         'class'=>'required',
         'active'=>'required',
         'email'=>'required|email',
-        'company_id'=>'required',
+        
        
       ]);
       $obj = new model1();
@@ -34,6 +34,7 @@ class HomeController extends Controller
       $obj->Class = request('class');
       $obj->active = request('active');
       $obj->email  = request('email');
+      $obj->company_id  = request('active');
       $obj->save();  
         return back();
     }
