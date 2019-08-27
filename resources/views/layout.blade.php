@@ -18,8 +18,8 @@
                 @yield('content') 
         </div>
     
- <div class="footer bg-info" style="height:100px; width:100%">
- </div>
+ {{-- <div class="footer bg-info" style="height:100px; width:100%">
+ </div> --}}
     </body> 
     <script src="{{ asset("js/app.js") }}"></script>
     </html>

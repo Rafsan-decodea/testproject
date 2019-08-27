@@ -24,7 +24,7 @@ class HomeController extends Controller
         'roll' =>'required',
         'class'=>'required',
         'active'=>'required',
-        'email'=>'required|email',
+        'email'=>'required|email' ,
         
        
       ]);
