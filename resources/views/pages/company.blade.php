@@ -23,7 +23,7 @@
       {{ $item }}<br>
       @endforeach
     
-<button type="submit" class="btn btn-primary">Add company</button>
+<button type="submit" class="btn btn-primary">Add School</button>
 @csrf
 </form>
 

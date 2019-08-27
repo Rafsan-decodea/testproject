@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-info">
-    <a class="navbar-brand" href="{{ route('home') }}">Test App</a>
+    <a class="navbar-brand" href="{{ route('home') }}">See Details</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -8,11 +8,11 @@
         <ul class="navbar-nav mr-auto">
 
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('company') }}">Company</a>
+            <a class="nav-link" href="{{ route('student') }}">Add Details</a>
         </li>
     
         <li class="nav-item">
-            <a class="nav-link" href="#">schools</a>
+            <a class="nav-link" href="{{ route('company') }}">Schoole Add</a>
         </li>
 
         <li class="nav-item">
