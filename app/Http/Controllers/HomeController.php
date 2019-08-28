@@ -40,6 +40,7 @@ public function addStudent(Request $request)
     
    
   ]);
+ 
   $obj = new model1();
   $obj->Name = request('name');
   $obj->Roll = request('roll');
@@ -47,6 +48,7 @@ public function addStudent(Request $request)
   $obj->active = request('active');
   $obj->email  = request('email');
   $obj->company_id  = request('active');
+  
   $obj->save();  
     return back();
   

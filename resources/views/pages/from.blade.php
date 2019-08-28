@@ -21,16 +21,15 @@
        </div>
       <div class="form-group">
         <label for="active">status</label>
-        <select name="active" id="active" class="form-control" >
+        <select name="active"  id="active"class="form-control" >
           <option value="" disabled>Select Student status</option>
           <option value="1">Active</option>
           <option value="0">Inactive<option>
-
         </select>
       </div>
       <div class="form-group">
         <label for="active">status</label>
-        <select name="active" id="active" class="form-control" >
+        <select name="company" id="active" class="form-control" >
           @foreach ($company as $item)
               <option value="{{ $item->id }}">{{  $item->name }}</option>
           @endforeach
