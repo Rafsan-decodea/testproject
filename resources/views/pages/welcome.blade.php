@@ -28,7 +28,8 @@
       @foreach($inactivecustomres as $item)
         id==> {{ $item->id }} <br> 
           Name==> {{ $item->Name }}({{ $item->email }})  <br>
-          Name==> {{ $item->company->name }}({{ $item->email }})  <br>
+          Name==> {{ $item->company->name }}
+          <br>
         roll==> {{ $item->Roll }} <br>
         Clas==>{{ $item->Class }}<br>
         Email==>{{ $item->email }}<br>

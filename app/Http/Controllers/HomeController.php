@@ -8,23 +8,28 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    function index(){
-      
-      $data['activecustomers'] = model1::active()->get();
-      $data['inactivecustomres'] = model1::inactive()->get();
-      $data['company'] = Company::all();
-      //  dd($activeCustomers);
-        $data['name'] = model1::all();
-          return view('pages.welcome',$data);
-         
-    }
+  
+  
+function index(){
+    $data['activecustomers'] = model1::active()->get();
+    $data['inactivecustomres'] = model1::inactive()->get();
+    // dd($data['inactivecustomres']);
+    $data['company'] = Company::all();
+    //  dd($activeCustomers);
+    $data['name'] = model1::all();
+
+    return view('pages.welcome',$data);
+        
+  }
+
 public function student(){
+
   $data['activecustomers'] = model1::active()->get();
   $data['inactivecustomres'] = model1::inactive()->get();
   $data['company'] = Company::all();
   //  dd($activeCustomers);
-    $data['name'] = model1::all();
-    return view('pages.from',$data);
+  $data['name'] = model1::all();
+  return view('pages.from',$data);
 
 }
 
@@ -36,9 +41,7 @@ public function addStudent(Request $request)
     'roll' =>'required',
     'class'=>'required',
     'active'=>'required',
-    'email'=>'required|email' ,
-    
-   
+    'email'=>'required|email',
   ]);
  
   $obj = new model1();
@@ -50,31 +53,29 @@ public function addStudent(Request $request)
   $obj->company_id  = request('active');
   
   $obj->save();  
-    return back();
+  return back();
   
 }
 
+  function company()
+  {
+    $data['company_data'] = Company::all();
+    return view('pages.company',$data);
+  }
 
-
-    function company()
-    {
-      $data['company_data'] = Company::all();
-      return view('pages.company',$data);
-    }
-
-    function addcompany(Request $request)
-    {
-      $request->validate([
-        'name' => 'required|min:3|max:10',
-        'phone' => 'required'
-       
-      ]);
+  function addcompany(Request $request)
+  {
+    $request->validate([
+      'name' => 'required|min:3|max:10',
+      'phone' => 'required'
       
-            $company = new Company();
-            $company->name = $request->name;
-            $company->phone = $request->phone;
-            $company->save();
-            return redirect()->back();
-        
-    }
+    ]);
+    
+          $company = new Company();
+          $company->name = $request->name;
+          $company->phone = $request->phone;
+          $company->save();
+          return redirect()->back();
+      
+  }
 }
