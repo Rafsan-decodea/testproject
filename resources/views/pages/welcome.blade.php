@@ -22,6 +22,7 @@
           Clas==>{{ $item->Class }}<br>
           Email==>{{ $item->email }}<br>
           Status==>{{ $item->active ? 'active' : 'inactive' }}<br>
+          <a href="{{ route('edit') }}">Edit</a>
           
       @endforeach
    </div>
@@ -37,6 +38,7 @@
         Clas==>{{ $item->Class }}<br>
         Email==>{{ $item->email }}<br>
         Status==>{{ $item->active ? 'inactive' : 'active' }}<br>
+        <a href="{{ route('edit') }}">Edit</a>
       @endforeach
   </div>
 

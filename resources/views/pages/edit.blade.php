@@ -41,7 +41,7 @@
       {{ $item }}<br>
       @endforeach 
        
-<button type="submit" class="btn btn-primary">Edit item</button>
+<button type="submit" class="btn btn-success">Edit item</button>
 @csrf
 </form>
 

@@ -24,10 +24,8 @@ function index(){
 
 public function student(){
 
-  // $data['activecustomers'] = model1::active()->get();
-  // $data['inactivecustomres'] = model1::inactive()->get();
+
   $data['company'] = Company::all();
-  //  dd($activeCustomers);
  
   return view('pages.from',$data);
 
