@@ -78,4 +78,41 @@ public function addStudent(Request $request)
           return redirect()->back();
       
   }
+
+
+public function edit()
+{
+  $data['activecustomers'] = model1::active()->get();
+  $data['inactivecustomres'] = model1::inactive()->get();
+  $data['company'] = Company::all();
+   return view('pages.edit',$data);
+}
+
+public function edit_work(Request $request)
+{
+
+
+  $data = request()->validate([
+    'name'=>'required|min:3',
+    'roll' =>'required',
+    'class'=>'required',
+    'active'=>'required',
+    'email'=>'required|email',
+  ]);
+
+  $obj  = new model1();
+  $obj->Name = request('name');
+  $obj->Roll = request('roll');
+  $obj->Class = request('class');
+  $obj->active = request('active');
+  $obj->email  = request('email');
+  $obj->company_id  = request('company');
+  $obj->save();  
+  return redirect('pages.edit');
+  
+   
+
+}
+
+
 }
