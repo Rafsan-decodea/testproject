@@ -14,9 +14,9 @@ function index(){
     $data['activecustomers'] = model1::active()->get();
     $data['inactivecustomres'] = model1::inactive()->get();
     // dd($data['inactivecustomres']);
-    $data['company'] = Company::all();
+    
     //  dd($activeCustomers);
-    $data['name'] = model1::all();
+    
 
     return view('pages.welcome',$data);
         
@@ -24,11 +24,11 @@ function index(){
 
 public function student(){
 
-  $data['activecustomers'] = model1::active()->get();
-  $data['inactivecustomres'] = model1::inactive()->get();
+  // $data['activecustomers'] = model1::active()->get();
+  // $data['inactivecustomres'] = model1::inactive()->get();
   $data['company'] = Company::all();
   //  dd($activeCustomers);
-  $data['name'] = model1::all();
+ 
   return view('pages.from',$data);
 
 }
@@ -50,7 +50,7 @@ public function addStudent(Request $request)
   $obj->Class = request('class');
   $obj->active = request('active');
   $obj->email  = request('email');
-  $obj->company_id  = request('active');
+  $obj->company_id  = request('company');
   
   $obj->save();  
   return back();

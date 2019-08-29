@@ -13,6 +13,8 @@
    <div class="col-6">
      <h3>active Student</h3>
       @foreach($activecustomers as $item)
+
+      
           id==> {{ $item->id }} <br> 
           Name==> {{ $item->Name }}({{ $item->email }})  <br>
           Name==> {{ $item->company->name }}({{ $item->email }})  <br>
@@ -26,6 +28,7 @@
    <div class="col-6 ">
     <h3>inactive Student</h3>
       @foreach($inactivecustomres as $item)
+      
         id==> {{ $item->id }} <br> 
           Name==> {{ $item->Name }}({{ $item->email }})  <br>
           Name==> {{ $item->company->name }}
@@ -33,7 +36,7 @@
         roll==> {{ $item->Roll }} <br>
         Clas==>{{ $item->Class }}<br>
         Email==>{{ $item->email }}<br>
-        
+        Status==>{{ $item->active ? 'inactive' : 'active' }}<br>
       @endforeach
   </div>
 

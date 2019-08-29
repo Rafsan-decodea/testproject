@@ -11,7 +11,7 @@ class model1 extends Model
     }
     public function scopeInactive($query)
     {
-        return $query->where('active',1);
+        return $query->where('active',0);
     }
     public function company()
     {
