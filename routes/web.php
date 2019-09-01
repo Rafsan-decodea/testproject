@@ -18,4 +18,4 @@ Route::post('/company', 'HomeController@addcompany')->name('add.company');
 Route::resource('/crud', 'ResorseController');
 Route::get('/student', 'HomeController@Student')->name('student'); 
 Route::post('/add-student', 'HomeController@addStudent')->name('add.student'); 
-Route::get('/edit','HomeController@edit')->name('edit');
+Route::get('/edit/{id}','HomeController@edit')->name('stu.edit');
